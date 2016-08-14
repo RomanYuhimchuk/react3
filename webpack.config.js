@@ -1,4 +1,5 @@
 var HTMLWebpackPlugin = require('html-webpack-plugin');
+
 var HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
 	//html copy-compiler
 	template: __dirname + '/app/index.html',
@@ -15,9 +16,17 @@ module.exports={
 				test: /\.js$/,
 				exclude: /node_modules/,
 				loader: 'babel-loader'
-			}
+			},
+			{
+		        test: /\.scss$/,
+		        loaders: ["style", "css?sourceMap", "sass?sourceMap"]
+		    },
 		]
 	},
+	// sassLoader: {
+	//     filename: 'style.css',
+	// 	path: __dirname + '/build'
+	// },
 	//where to compile
 	output: {
 		filename: 'transformed.js',
