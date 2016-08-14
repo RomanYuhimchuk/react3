@@ -3,7 +3,7 @@ var React = require('react');
 var Single = React.createClass({
 
 	render: function(){
-
+ 
 		return(
 			<div>
 				<h3 className="ing-title">{this.props.name}</h3>
@@ -11,8 +11,8 @@ var Single = React.createClass({
 					{this.props.reciept.map((el,i)=>{
 						return <p key={'ing_' + i}> {el} </p>
 					})}
-
-					<div >Delete</div>
+					<div onClick={()=>{this.props.onClickDel(this.props.recieptIndex)}}>Delete</div>
+					<div className="edit">edit reciept</div>
 				</div>
 			</div>
 		);

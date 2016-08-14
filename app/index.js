@@ -1,32 +1,41 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var App = require('./components/App.js');
+var App = require('./components/app.js');
 
 var Index = React.createClass({
+
   getInitialState: function () {
-    return { 
-     reciepts : []
-    }
+     return { 
+        reciepts : [],
+     }
   },
 
-  // componentDidMount: function() {
+  componentWillMount: function() {
+    
+      if (localStorage.getItem('_list_reciept')){
+        this.setState({
+          reciepts : JSON.parse(localStorage.getItem('_list_reciept'))
+        });
+      } else {
+        this.setState({
+          reciepts : this.props.initialData
+        })  
+      }
+  },
 
-  // },
+  componentDidUpdate: function(){
+    localStorage.setItem('_list_reciept', JSON.stringify(this.state.reciepts));
+  },
 
-   componentWillMount: function() {
+  modifyReciepts : function(arr){
       this.setState({
-        reciepts : this.props.initialData
-      })
-   },
-  // deleteReciept : function(newArr){
-  //      this.setState({
-  //         reciepts: newArr
-  //     });
-  // },
+         reciepts: arr
+      });
+  },
   render: function () {
     return(
     <div>
-        return <App totalArr={this.state.reciepts} deleteOnClick={this.deleteReciept}/>;
+        <App totalArr={this.state.reciepts} modifyOnClick={this.modifyReciepts}/>
     </div>
   	);
   }
