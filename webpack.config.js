@@ -15,18 +15,18 @@ module.exports={
 			{
 				test: /\.js$/,
 				exclude: /node_modules/,
-				loader: 'babel-loader'
+				loader: 'babel-loader',
+				query: {
+	        presets: ['es2015']
+	      }
 			},
 			{
-		        test: /\.scss$/,
-		        loaders: ["style", "css?sourceMap", "sass?sourceMap"]
-		    },
-		]
+		    test: /\.scss$/,
+		    loaders: ["style","css?sourceMap", "sass?sourceMap"]
+		  },
+			]
 	},
-	// sassLoader: {
-	//     filename: 'style.css',
-	// 	path: __dirname + '/build'
-	// },
+
 	//where to compile
 	output: {
 		filename: 'transformed.js',

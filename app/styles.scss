@@ -1,4 +1,62 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 body {
-	background: red;
-	
+	background: lightblue;
+	font-family: 'Open Sans', sans-serif;
+}
+.form {
+	width: 60%;
+	margin: auto;
+	border: 2px dashed black;
+}
+.modal {
+	display: none;
+}
+.single {
+	&__title {
+		cursor: pointer;
+		text-align: center;
+	}
+	&__ingridients{
+		display: none;
+		p {
+			margin:0 20px;
+			border-top: 1px dashed black;
+			&:last-child{
+				border-bottom: 1px dashed black;
+			}
+		}
+		p:nth-child(odd){
+			background: white;
+		}
+	}
+	&__buttons{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+}
+.button {
+	padding: 10px 30px;
+	border-radius: 5px;
+	background: coral;
+	color: white;
+	margin: 20px 15px;
+	cursor: pointer;
+}
+.modal {
+	text-align: center;
+	padding: 30px;
+	.add-submit {
+		display: inline-block;
+	}
+}
+input , textarea {
+	display: block;
+	margin: auto;
+}
+.add-reciept{
+	text-align: center;
+	.button {
+		display: inline-block;
+	}
 }

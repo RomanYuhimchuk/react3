@@ -4,6 +4,7 @@ var Single = require('./Single.js');
 var AddButton = require('./addButton.js');
 var Modal = require('./modal.js');
 
+
 var App = React.createClass({
 
 	delete: function(i){
@@ -38,7 +39,7 @@ var App = React.createClass({
 					});
 		
 		return(
-			<div>
+			<div className="form">
 				{rows}
 				<AddButton />
 				<Modal addOnClick={this.addReciept} />

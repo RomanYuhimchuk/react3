@@ -1,5 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+require('./styles.scss');
 var App = require('./components/app.js');
 
 var Index = React.createClass({

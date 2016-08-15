@@ -4,7 +4,7 @@
   "description": "second project",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --progress --colors",
     "start": "webpack-dev-server --progress --colors"
   },
   "author": "",
